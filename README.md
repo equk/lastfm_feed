@@ -29,6 +29,8 @@ Changelog:
 
 EXAMPLE:
 
+![](https://raw.github.com/equk/lastfm_feed/master/example_screenshot.png)
+
 ```php
 
 <!DOCTYPE html>
