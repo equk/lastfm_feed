@@ -51,7 +51,7 @@ function lastfmfeed($lastfm_user,$lastfm_num) {
        */
 
     //$lastfm_user = 'equilibriumuk';
-    $lastfm_api = '';
+    $lastfm_api = '8e4bd6c72ecdb58b26f70a96b231c249';
     //$lastfm_num = '10';
 
     $lastfm_request = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=".$lastfm_user."&api_key=".$lastfm_api."&limit=".$lastfm_num."";
