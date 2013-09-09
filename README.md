@@ -15,9 +15,12 @@ lastfm_feed
 Version: 0.2.0
 
 Changelog:
+
     0.1.0 - initial commit
+
     0.2.0 - added function time_ago to show how long ago since
             tracks were played
+
 *****************************************************************
 
   To use this script you need to include lastfm_feed.php.
