@@ -21,10 +21,12 @@
                      `NNd
 
 *****************************************************************
-Version: 0.1.0
+Version: 0.2.0
 
 Changelog:
     0.1.0 - initial commit
+    0.2.0 - added function time_ago to show how long ago since
+            tracks were played
 *****************************************************************
 
   To use this script you need to include this file using php.
@@ -63,8 +65,6 @@ function lastfmfeed($lastfm_user,$lastfm_num) {
     echo "<div id='lastfmfeed_wrapper'>";
 
     for ($i = 0; $i < $lastfm_num; $i++) {
-
-
         echo "<div class='lastfmfeed_recently_played'>";
         if ($music[$i]->image <> ''){
             echo "<img src='".$music[$i]->image."' alt='albumart'>";
@@ -74,7 +74,7 @@ function lastfmfeed($lastfm_user,$lastfm_num) {
         echo "<div class='lastfmfeed_song_info'>";
         echo "<a href='".$music[$i]->url."' target='_blank'>" .$music[$i]->artist . " - ";
         echo $music[$i]->name . "</a>";
-        echo "<div class='time'>".$music[$i]->date."</div>";
+        echo "<div class='time'>".time_ago($music[$i]->date["uts"])."</div>";
         echo "</div>";
         echo "</div>";
     }
@@ -86,4 +86,28 @@ function lastfmfeed($lastfm_user,$lastfm_num) {
 function lastfmfeed_css(){
   echo "<link href='css/lastfm_feed.css' rel='stylesheet'>";
 }
+
+function time_ago($datefrom){
+
+    $difference = time() - $datefrom;
+    $show_fuzzy_detail = false;
+
+    if($difference < 60){
+      $plural = $difference > 1 ? 's' : '';
+      return $difference.' second'.$plural.' ago';
+    } else if( $difference < 60*60 ){
+      $ago_seconds = $difference % 60;
+      $plural = $ago_seconds > 1?'s':'';
+      $ago_seconds_txt = $ago_seconds > 0 && $show_fuzzy_detail === true ?' and '.$ago_seconds.' second'.$plural.' ago' : ' ago';
+      $ago_minutes = floor( $difference / 60 );
+      $minplural= $ago_minutes > 1 ? 's' : '';
+      return $ago_minutes . ' minute'.$minplural.$ago_seconds_txt;
+    } else if ( $difference < 60*60*24 ){
+      $ago_hours = floor( $difference / ( 60 * 60 ) );
+      $plural = $ago_hours > 1 ? 's' : '';
+      return  $ago_hours.' hour'.$plural.' ago';
+    }else if ( $difference >= 60*60*24 ) {
+      return "currently listening";
+    }
+  }
 ?>
