@@ -2,26 +2,26 @@ lastfm_feed
 ===========
 
 
-*****************************************************************
-                Lastfm feed - equk.co.uk
-*****************************************************************
- lastfm feed - Copyright (C) 2013  Bradley Walden
- This program comes with ABSOLUTELY NO WARRANTY.
- This is free software, and you are welcome to redistribute it
- under certain conditions. See GNU GPLv3.
-*****************************************************************
+    *****************************************************************
+                    Lastfm feed - equk.co.uk
+    *****************************************************************
+     lastfm feed - Copyright (C) 2013  Bradley Walden
+     This program comes with ABSOLUTELY NO WARRANTY.
+     This is free software, and you are welcome to redistribute it
+     under certain conditions. See GNU GPLv3.
+    *****************************************************************
 
-*****************************************************************
-Version: 0.2.0
+    *****************************************************************
+    Version: 0.2.0
 
-Changelog:
+    Changelog:
 
-    0.1.0 - initial commit
+        0.1.0 - initial commit
 
-    0.2.0 - added function time_ago to show how long ago since
-            tracks were played
+        0.2.0 - added function time_ago to show how long ago since
+                tracks were played
 
-*****************************************************************
+    *****************************************************************
 
   To use this script you need to include lastfm_feed.php.
   You can then call the functions.
@@ -30,6 +30,8 @@ Changelog:
   the header of the website/page.
 
   Please see example.php for a working example of this code.
+
+  The example is also available live at lastfm.equk.co.uk
 
 
 EXAMPLE:
