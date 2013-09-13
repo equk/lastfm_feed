@@ -23,15 +23,27 @@ lastfm_feed
 
     *****************************************************************
 
-  To use this script you need to include lastfm_feed.php.
-  You can then call the functions.
+    To use this script you need to include this file using php.
+    You can then call the functions.
 
-  There is also a function for css styles which can be put into
-  the header of the website/page.
+    lastfmfeed('username','number_of_tracks')
 
-  Please see example.php for a working example of this code.
+    eg: lastfmfeed('equilibriumuk','10');
 
-  The example is also available live at lastfm.equk.co.uk
+    There is also a function for css styles which can be put into
+    the header of the website/page.
+
+    eg: lastfmfeed_css();
+
+
+To use this script you need to include lastfm_feed.php .. You can then call the functions.
+
+There is also a function for css styles which can be put into
+the header of the website/page.
+
+Please see example.php for a working example of this code.
+
+The example is also available live at lastfm.equk.co.uk
 
 
 EXAMPLE:

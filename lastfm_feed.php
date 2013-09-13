@@ -32,6 +32,8 @@ Changelog:
   To use this script you need to include this file using php.
   You can then call the functions.
 
+  lastfmfeed('username','number_of_tracks')
+
   eg: lastfmfeed('equilibriumuk','10');
 
   There is also a function for css styles which can be put into
