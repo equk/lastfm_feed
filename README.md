@@ -12,7 +12,7 @@ lastfm_feed
     *****************************************************************
 
     *****************************************************************
-    Version: 0.2.0
+    Version: 0.3.0
 
     Changelog:
 
@@ -20,6 +20,8 @@ lastfm_feed
 
         0.2.0 - added function time_ago to show how long ago since
                 tracks were played
+
+        0.3.0 - code cleanup (indent etc)
 
     *****************************************************************
 

@@ -21,12 +21,14 @@
                      `NNd
 
 *****************************************************************
-Version: 0.2.0
+Version: 0.3.0
 
 Changelog:
     0.1.0 - initial commit
     0.2.0 - added function time_ago to show how long ago since
             tracks were played
+    0.3.0 - code cleanup (indent etc)
+
 *****************************************************************
 
   To use this script you need to include this file using php.
@@ -45,24 +47,12 @@ Changelog:
 
 */
 function lastfmfeed($lastfm_user,$lastfm_num) {
-    /* VARIABLES
-       =========
 
-       lastfm_user = lastfm username
-       lastfm_api = lastfm api key
-       lastfm_num = number of tracks to show
-
-       */
-
-    //$lastfm_user = 'equilibriumuk';
     $lastfm_api = '8e4bd6c72ecdb58b26f70a96b231c249';
-    //$lastfm_num = '10';
 
     $lastfm_request = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=".$lastfm_user."&api_key=".$lastfm_api."&limit=".$lastfm_num."";
     $xml = simplexml_load_file($lastfm_request);
     $music = $xml->recenttracks->track;
-
-    /* END VARIABLES */
 
     echo "<div id='lastfmfeed_wrapper'>";
 
@@ -86,7 +76,7 @@ function lastfmfeed($lastfm_user,$lastfm_num) {
 }
 
 function lastfmfeed_css(){
-  echo "<link href='css/lastfm_feed.css' rel='stylesheet'>";
+    echo "<link href='css/lastfm_feed.css' rel='stylesheet'>";
 }
 
 function time_ago($datefrom){
@@ -95,21 +85,21 @@ function time_ago($datefrom){
     $show_fuzzy_detail = false;
 
     if($difference < 60){
-      $plural = $difference > 1 ? 's' : '';
-      return $difference.' second'.$plural.' ago';
+        $plural = $difference > 1 ? 's' : '';
+        return $difference.' second'.$plural.' ago';
     } else if( $difference < 60*60 ){
-      $ago_seconds = $difference % 60;
-      $plural = $ago_seconds > 1?'s':'';
-      $ago_seconds_txt = $ago_seconds > 0 && $show_fuzzy_detail === true ?' and '.$ago_seconds.' second'.$plural.' ago' : ' ago';
-      $ago_minutes = floor( $difference / 60 );
-      $minplural= $ago_minutes > 1 ? 's' : '';
-      return $ago_minutes . ' minute'.$minplural.$ago_seconds_txt;
+        $ago_seconds = $difference % 60;
+        $plural = $ago_seconds > 1?'s':'';
+        $ago_seconds_txt = $ago_seconds > 0 && $show_fuzzy_detail === true ?' and '.$ago_seconds.' second'.$plural.' ago' : ' ago';
+        $ago_minutes = floor( $difference / 60 );
+        $minplural= $ago_minutes > 1 ? 's' : '';
+        return $ago_minutes . ' minute'.$minplural.$ago_seconds_txt;
     } else if ( $difference < 60*60*24 ){
-      $ago_hours = floor( $difference / ( 60 * 60 ) );
-      $plural = $ago_hours > 1 ? 's' : '';
-      return  $ago_hours.' hour'.$plural.' ago';
+        $ago_hours = floor( $difference / ( 60 * 60 ) );
+        $plural = $ago_hours > 1 ? 's' : '';
+        return  $ago_hours.' hour'.$plural.' ago';
     }else if ( $difference >= 60*60*24 ) {
-      return "currently listening";
+        return "currently listening";
     }
-  }
+}
 ?>
