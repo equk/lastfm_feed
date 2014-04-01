@@ -5,7 +5,7 @@ lastfm_feed
     *****************************************************************
                     Lastfm feed - equk.co.uk
     *****************************************************************
-     lastfm feed - Copyright (C) 2013  Bradley Walden
+     lastfm feed - Copyright (C) 2014  Bradley Walden
      This program comes with ABSOLUTELY NO WARRANTY.
      This is free software, and you are welcome to redistribute it
      under certain conditions. See GNU GPLv3.
